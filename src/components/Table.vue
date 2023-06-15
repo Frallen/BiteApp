@@ -10,5 +10,4 @@ const {Table} = storeToRefs(useMain())
 </script>
 
 <style scoped lang="less">
-
 </style>

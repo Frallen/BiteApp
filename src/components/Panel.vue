@@ -57,8 +57,6 @@
   </div>
 </template>
 <script setup lang="ts">
-
-
 const ActiveNav = ref<number>()
 const stateWidgetPanel = ref<boolean>(false)
 const {Paths} = storeToRefs(useMain())
@@ -79,23 +77,22 @@ setInterval(async () => {
 await getTableData()
 await getControl()
 await getGraph()
+
 const draggedElement = ref<HTMLElement>();
 
 const startDrag = (e: Event) => {
-
   draggedElement.value = e.currentTarget as HTMLElement
 }
 const drop = (e: Event) => {
   (e.currentTarget as HTMLElement).appendChild(draggedElement.value as HTMLElement);
 };
-
-
 </script>
 <style scoped lang="less">
 .panel {
   display: flex;
   height: 90vh;
   position: relative;
+  overflow: auto;
 
   &-nav {
     width: 20%;
@@ -241,7 +238,18 @@ const drop = (e: Event) => {
 
   }
 }
+.panel::-webkit-scrollbar-thumb {
+  background: @blue;
+  .br(20px)
+}
 
+.panel::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.panel::-webkit-scrollbar {
+  width: 5px;
+}
 .mobile-open {
   position: absolute;
   left: 0;

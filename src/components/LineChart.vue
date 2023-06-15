@@ -5,20 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-} from 'chart.js'
 import {Line} from 'vue-chartjs'
-
 const {Graph} = storeToRefs(useMain())
-ChartJS.register(
+Chart.register(
     CategoryScale,
     LinearScale,
     PointElement,

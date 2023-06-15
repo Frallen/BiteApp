@@ -33,6 +33,22 @@ export default defineConfig({
                 "vue",
                 '@vueuse/core',
                 {
+                    'chart.js': [
+                        'CategoryScale',
+                        'LinearScale',
+                        'PointElement',
+                        'LineElement',
+                        'Title',
+                        'Tooltip',
+                        'Legend',
+                        'Line',
+                        'Chart'
+                    ]
+                },
+                {
+                    "vue-chartjs": ["Line"]
+                },
+                {
                     "pinia": [
                         'storeToRefs',
                         // automatically imports `defineStore`

@@ -45,16 +45,18 @@ watchEffect(() => {
   border: 1px solid @blue;
   .br(100%);
   overflow: hidden;
-@media @lg{
-  width: 200px;
-}
+  @media @lg {
+    width: 200px;
+  }
+
   &-body {
 
     padding: 30px 0 37px;
     text-align: center;
-    @media @lg{
+    @media @lg {
       padding: 10px 0 17px;
     }
+
     .title {
       color: @blue;
       font-size: 1em;
