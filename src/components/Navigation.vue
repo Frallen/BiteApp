@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="navbar-logo">
       <div class="pic">
-        <img src="/public/images/logo.png">
+        <img src="/images/logo.png">
       </div>
       <a href="/">Энергия</a>
     </div>
@@ -21,6 +21,7 @@
   padding: 23px;
   border-bottom: 1px solid #eee;
   height: 10vh;
+  background: #fff;
   &-logo {
     display: flex;
     align-items: center;

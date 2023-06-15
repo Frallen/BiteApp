@@ -24,6 +24,7 @@ export default defineConfig({
             dts: true,
             vueTemplate: true,
             dirs: [
+                './src/store',
                 './src/types',
                 './src/composables' // only root modules
                 // './composables/**', // all nested modules
@@ -31,6 +32,15 @@ export default defineConfig({
             imports: [
                 "vue",
                 '@vueuse/core',
+                {
+                    "pinia": [
+                        'storeToRefs',
+                        // automatically imports `defineStore`
+                        "defineStore", // import { defineStore } from 'pinia'
+                        // automatically imports `defineStore` as `definePiniaStore`
+                        ["defineStore", "definePiniaStore"], // import { defineStore as definePiniaStore } from 'pinia'
+                    ]
+                }
             ]
         })
     ],
