@@ -14,11 +14,13 @@ interface stateType {
     Table: {
         header: Header[]
         body: Item[]
-    }
+    } | null
+    isError: boolean
 }
 
 export const useMain = defineStore('main', {
     state: (): stateType => ({
+        isError: false,
         Paths: [
             {
                 id: 1,
@@ -42,7 +44,7 @@ export const useMain = defineStore('main', {
             minValue: 0
         },
         Graph: {},
-        Table: {}
+        Table: null
     }),
     getters: {
         PreparedControl(state) {
@@ -54,7 +56,7 @@ export const useMain = defineStore('main', {
             const {isFetching, error, data} = await useFetch(`https://dashboard.bit76.ru/controlValue/ `).get()
             if (error.value) {
                 console.error(error.value)
-
+                this.Error = true
             } else {
 
                 this.Control = JSON.parse(data.value).value as controlType
@@ -68,7 +70,7 @@ export const useMain = defineStore('main', {
             } = await useFetch(`https://dashboard.bit76.ru/graphValues/`).get()
             if (error.value) {
                 console.error(error.value)
-
+                this.Error = true
             } else {
 
                 this.Graph = {
@@ -90,7 +92,7 @@ export const useMain = defineStore('main', {
             } = await useFetch(`https://dashboard.bit76.ru/tableValues/`).get()
             if (error.value) {
                 console.error(error.value)
-
+                this.Error = true
             } else {
                 const snap = JSON.parse(data.value) as tableType[]
 

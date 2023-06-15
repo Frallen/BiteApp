@@ -120,6 +120,10 @@ const drop = (e: Event) => {
       margin: 20px 0 0 0;
       cursor: pointer;
       padding: 11px 34px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 120%;
+      color: #000000;
       @media @lg {
         padding: 11px 18px;
       }
@@ -140,11 +144,6 @@ const drop = (e: Event) => {
           height: 100%;
         }
       }
-
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 120%;
-      color: #000000;
     }
 
     &-item:first-child {
@@ -170,6 +169,7 @@ const drop = (e: Event) => {
     }
 
     &-item {
+      background: @lightblue;
       border: 1px dashed @blue;
     }
 
@@ -238,6 +238,7 @@ const drop = (e: Event) => {
 
   }
 }
+
 .panel::-webkit-scrollbar-thumb {
   background: @blue;
   .br(20px)
@@ -250,6 +251,7 @@ const drop = (e: Event) => {
 .panel::-webkit-scrollbar {
   width: 5px;
 }
+
 .mobile-open {
   position: absolute;
   left: 0;
@@ -275,7 +277,7 @@ const drop = (e: Event) => {
 }
 
 .visible {
-  z-index: 2;
+  z-index: 3;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
